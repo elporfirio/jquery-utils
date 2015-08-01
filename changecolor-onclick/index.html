@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cambio de color de elemento al hacer click con JQuery UI | elporfirio.com<</title>
+</head>
+<style>
+    div{
+        background: #D51AC9;
+        height: 100px;
+        width: 100px;
+    }
+</style>
+<body>
+
+<button>Cambiar color</button>
+<div id="objetivo"></div>
+
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script>
+    $(function () {
+        var counter = 0;
+        var colors = ['purple', 'yellow', 'black', 'blue', 'red'];
+        var divObjetivo = $("#objetivo");
+
+        $("button").on("click", function () {
+            divObjetivo.animate({ backgroundColor: colors[counter]}, "slow");
+            counter ++;
+            if(counter > colors.length){
+                counter = 0;
+            }
+        });
+    });
+</script>
+</body>
+</html>
