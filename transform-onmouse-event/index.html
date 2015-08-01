@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tranformaciones en eventos de ratón con JQuery | elporfirio.com</title>
+    <style>
+        .imagen-muestra {
+            width: 100px;
+            height: 100px;
+            background-color: #FCA;
+            margin: 10px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Repetir cuantas veces sea necesario -->
+<div class="imagen-muestra"></div>
+<div class="imagen-muestra"></div>
+<div class="imagen-muestra"></div>
+<div class="imagen-muestra"></div>
+
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+    function easiarIn(){
+        $(this).css({
+            transform: 'scale(1.5)',
+            transition: '0.2s ease-in'
+        });
+    }
+
+    function easiarOut(){
+        $(this).css({
+            transform: 'scale(1)',
+            transition: '0.2s ease-out'
+        });
+    }
+
+    $(function(){
+        $(".imagen-muestra")
+                .on("mouseover", easiarIn)
+                .on("mouseout", easiarOut);
+    })
+</script>
+</body>
+</html>
